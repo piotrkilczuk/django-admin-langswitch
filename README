@@ -1,0 +1,4 @@
+Adds easy language switch in admin
+
+Installation:
+* add 'admin_langswitch' to INSTALLED_APPS (after putting it on PYTHON PATH) 
