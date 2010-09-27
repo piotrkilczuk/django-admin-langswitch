@@ -6,10 +6,13 @@ import os.path
 URL = ''
 
 # check if 'django.views.i18n.set_language' is reachable via url, otherwise raise ImproperlyConfigured
-try:
-    URL = urlresolvers.reverse('django.views.i18n.set_language')
-except urlresolvers.NoReverseMatch:
-    raise ImproperlyConfigured('Cannot resolve django.views.i18n.set_language to URL - see http://docs.djangoproject.com/en/1.2/topics/i18n/internationalization/#the-set-language-redirect-view')
+# this does not work for some reason when running in Apache/WSGI environment (threading issues?)
+# disabled for further research
+
+#try:
+#    URL = urlresolvers.reverse('django.views.i18n.set_language')
+#except urlresolvers.NoReverseMatch:
+#    raise ImproperlyConfigured('Cannot resolve django.views.i18n.set_language to URL - see http://docs.djangoproject.com/en/1.2/topics/i18n/internationalization/#the-set-language-redirect-view')
 
 # register additional template dir
 HERE = os.path.abspath(os.path.dirname(__file__))
