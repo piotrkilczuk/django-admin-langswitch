@@ -1,4 +1,3 @@
-from cms.middleware.multilingual import MultilingualURLMiddleware
 from django.conf import settings
 from django.core import urlresolvers
 from django.http import HttpResponseRedirect
@@ -11,6 +10,8 @@ class CustomMultilingualURLMiddleware(MultilingualURLMiddleware, object):
     This class is EXPERIMENTAL although working successfully in production environment.
     Please take  a moment to examine/adapt the code, to make sure it does what you need.
     """
+    
+    from cms.middleware.multilingual import MultilingualURLMiddleware
     
     def is_cms(self, request):
         try:
