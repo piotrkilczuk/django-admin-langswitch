@@ -4,7 +4,7 @@ from distutils.core import setup
 
 setup(
     name='admin_langswitch',
-    version='0.1.3',
+    version='0.1.4',
     author='Piotr Kilczuk',
     author_email='p.kilczuk@neumea.pl',
     url='http://github.com/centralniak',
