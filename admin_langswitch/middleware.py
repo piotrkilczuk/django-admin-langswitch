@@ -3,10 +3,14 @@ from django.core import urlresolvers
 from django.http import HttpResponseRedirect
 from django.utils import translation
 
-from cms.middleware.multilingual import MultilingualURLMiddleware
+try:
+    from cms.middleware.multilingual import MultilingualURLMiddleware as parent
+except ImportError:
+    # Not using cms, inherit from object
+    parent = object
 
 
-class CustomMultilingualURLMiddleware(MultilingualURLMiddleware, object):
+class CustomMultilingualURLMiddleware(parent):
     """
     Supplies additional method that redirects / to /pl /en /de etc.
 
